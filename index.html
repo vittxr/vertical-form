@@ -139,9 +139,7 @@
         // Scroll the focused input into view properly
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('focus', (event) => {
-                setTimeout(() => {
-                    event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300); // Add delay to ensure scrolling occurs after keyboard opens
+                event.target.scrollIntoView({ behavior: 'smooth', block: 'center', inline: "nearest"});
             });
         });
     </script>
