@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,18 +11,18 @@
             height: 100%;
             overflow-x: hidden;
             font-family: Arial, sans-serif;
-            /*overflow-y: hidden;*/
         }
 
         #form-container {
             width: 100%;
             height: 100%;
             overflow-x: hidden;
-            overflow-y: auto; 
+            overflow-y: auto;
         }
 
         #form-container-2 {
-            width: 80%;
+            width: 100%;
+            max-width: 100%;
             margin: 0 auto;
         }
 
@@ -136,5 +135,15 @@
             </form>
         </div>
     </div>
+    <script>
+        // Scroll the focused input into view properly
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', (event) => {
+                setTimeout(() => {
+                    event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300); // Add delay to ensure scrolling occurs after keyboard opens
+            });
+        });
+    </script>
 </body>
 </html>
